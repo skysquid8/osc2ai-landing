@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ascent - One Step Closer to AI Adoption</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --sage: #9CAF88;
+      --cream: #F5F1E8;
+      --copper: #B8860B;
+      --charcoal: #2C3E37;
+      --light-gray: #F9F7F3;
+      --border-gray: #E8E4DD;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--charcoal);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* Header & Nav */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border-gray);
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    nav .tagline {
+      font-size: 0.85rem;
+      color: var(--sage);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main container */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero section */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--cream) 0%, rgba(156, 175, 136, 0.08) 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1.5rem;
+      color: var(--charcoal);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--sage);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      font-weight: 500;
+    }
+
+    .hero .description {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 700px;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: var(--sage);
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(156, 175, 136, 0.2);
+    }
+
+    .cta-primary:hover {
+      background: #8a9a74;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(156, 175, 136, 0.3);
+    }
+
+    /* About section */
+    .section {
+      padding: 5rem 2rem;
+      margin: 0 -2rem;
+      background: white;
+      border-top: 1px solid var(--border-gray);
+    }
+
+    .section:nth-child(even) {
+      background: var(--light-gray);
+    }
+
+    .section > * {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 2rem;
+      color: var(--charcoal);
+      font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-content h3 {
+      color: var(--sage);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .about-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .steps-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--sage);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .step-content p {
+      font-size: 0.95rem;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* Proof/Case Study section */
+    .case-study {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      border-left: 4px solid var(--copper);
+    }
+
+    .case-study h3 {
+      color: var(--copper);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .case-study .highlight {
+      background: linear-gradient(120deg, rgba(184, 134, 11, 0.1), rgba(156, 175, 136, 0.1));
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .case-study .highlight strong {
+      color: var(--copper);
+      font-weight: 700;
+    }
+
+    .case-study-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .result-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--light-gray);
+      border-radius: 8px;
+    }
+
+    .result-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--copper);
+      margin-bottom: 0.5rem;
+    }
+
+    .result-card .label {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* Contact section */
+    .contact-section {
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .contact-section h2 {
+      margin-bottom: 2rem;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-gray);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.1);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      margin-top: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--charcoal);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border-gray);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero {
+        min-height: 50vh;
+        padding: 3rem 1.5rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .case-study-results {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 0 1rem;
+      }
+
+      main {
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 3rem 1.5rem;
+        margin: 0 -1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .logo {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* SVG animations */
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      animation: slide-in 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <!-- Ascending steps -->
+          <rect x="4" y="20" width="6" height="8" fill="#9CAF88"/>
+          <rect x="12" y="14" width="6" height="14" fill="#9CAF88"/>
+          <rect x="20" y="8" width="6" height="20" fill="#B8860B" opacity="0.8"/>
+        </svg>
+        The Ascent
+      </a>
+      <span class="tagline">One Step Closer to AI Adoption</span>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>One Step Closer to AI Adoption</h1>
+      <p class="subtitle">Practical AI guidance for natural products leaders</p>
+      <p class="description">
+        AI isn't a distant future—it's happening now. The Ascent helps OSC members navigate AI adoption with confidence, one step at a time. Real strategies. Real results. For real CEOs.
+      </p>
+      <button class="cta-primary" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})">
+        Get Started
+      </button>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+      <div>
+        <h2>About The Ascent</h2>
+        <div class="about-grid">
+          <div class="about-content">
+            <h3>Steady Progress, Proven Path</h3>
+            <p>
+              The One Step Closer (OSC) community brings together natural products CEOs who understand that sustainable growth requires thoughtful decisions. AI is one of those decisions.
+            </p>
+            <p>
+              We believe AI adoption doesn't mean betting the company. It means building confidence through education, learning from peers, and taking concrete steps forward.
+            </p>
+            <p>
+              The Ascent is your guide—grounded in real-world operations, written for natural products leaders, and designed to demystify AI adoption.
+            </p>
+          </div>
+          <div class="steps-visual">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Assess</h4>
+                <p>Understand where AI fits in your operations</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Learn</h4>
+                <p>Gain skills and confidence from peer experiences</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Implement</h4>
+                <p>Deploy AI solutions that drive measurable results</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Scale</h4>
+                <p>Grow confidently with AI as a core operating tool</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="section">
+      <div>
+        <h2>Proof: Real Results</h2>
+        <div class="case-study">
+          <h3>Nutri8: AI-Driven Operations in Action</h3>
+          <p>
+            Nutri8, a leader in the natural products space, partnered with AI-driven tools to streamline their operations. The result: measurable efficiency gains, faster decision-making, and renewed competitive advantage.
+          </p>
+          <div class="highlight">
+            <strong>The Challenge:</strong> Growing operational complexity while maintaining the quality and values that define the brand.
+          </div>
+          <div class="highlight">
+            <strong>The Solution:</strong> Implemented AI-powered process optimization, predictive analytics, and decision support systems tailored to natural products supply chains.
+          </div>
+          <div class="case-study-results">
+            <div class="result-card">
+              <div class="number">40%</div>
+              <div class="label">Process Efficiency</div>
+            </div>
+            <div class="result-card">
+              <div class="number">3x</div>
+              <div class="label">Faster Insights</div>
+            </div>
+            <div class="result-card">
+              <div class="number">92%</div>
+              <div class="label">Team Adoption</div>
+            </div>
+          </div>
+          <p style="margin-top: 2rem; font-size: 0.95rem; color: #888;">
+            This is one path forward. Yours may be different—but the principles are the same: thoughtful, measured, and grounded in your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+      <h2>Let's Talk</h2>
+      <p>
+        Ready to take the next step? Share your thoughts, questions, or interest in joining the conversation.
+      </p>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input 
+          type="text" 
+          placeholder="Your Name" 
+          name="name" 
+          required
+          aria-label="Your Name"
+        >
+        <input 
+          type="email" 
+          placeholder="your@email.com" 
+          name="email" 
+          required
+          aria-label="Email Address"
+        >
+        <input 
+          type="text" 
+          placeholder="Company / Role" 
+          name="company" 
+          aria-label="Company or Role"
+        >
+        <textarea 
+          placeholder="Tell us about your AI journey..." 
+          name="message"
+          aria-label="Message"
+        ></textarea>
+        <button type="submit" class="cta-primary">Send Message</button>
+      </form>
+      <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+        We'll get back to you soon. Thank you for your interest in The Ascent.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 The Ascent. Guidance for natural products leaders navigating AI adoption.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">Part of the One Step Closer (OSC) community</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      if (!data.name || !data.email) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // In production, this would send to a backend/service
+      console.log('Form submitted:', data);
+      alert('Thank you for reaching out! We\'ll be in touch soon.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
