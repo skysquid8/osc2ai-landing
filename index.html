@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Ascent - One Step Closer to AI Adoption</title>
+  <title>The Ascent - OSC's AI-Powered Natural Products Leadership</title>
   <style>
     * {
       margin: 0;
@@ -132,6 +132,26 @@
       box-shadow: 0 6px 16px rgba(156, 175, 136, 0.3);
     }
 
+    .cta-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--sage);
+      padding: 0.75rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 2px solid var(--sage);
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 1rem;
+    }
+
+    .cta-secondary:hover {
+      background: var(--sage);
+      color: white;
+    }
+
     /* About section */
     .section {
       padding: 5rem 2rem;
@@ -156,6 +176,78 @@
       font-weight: 700;
     }
 
+    /* Vision section */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .vision-content h3 {
+      color: var(--sage);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .vision-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .vision-content ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .vision-content li {
+      padding-left: 2rem;
+      position: relative;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .vision-content li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+      font-weight: bold;
+    }
+
+    .impact-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .impact-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--copper);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .impact-card h4 {
+      color: var(--copper);
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .impact-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* About section */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -270,6 +362,42 @@
       font-weight: 500;
     }
 
+    /* Community section */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .community-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border-top: 3px solid var(--sage);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .community-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .community-card h4 {
+      color: var(--charcoal);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .community-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
     /* Contact section */
     .contact-section {
       text-align: center;
@@ -348,12 +476,17 @@
         padding: 3rem 1.5rem;
       }
 
+      .vision-grid,
       .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
 
       .case-study-results {
+        grid-template-columns: 1fr;
+      }
+
+      .community-grid {
         grid-template-columns: 1fr;
       }
 
@@ -368,6 +501,12 @@
       .section {
         padding: 3rem 1.5rem;
         margin: 0 -1.5rem;
+      }
+
+      .cta-secondary {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.5rem;
       }
     }
 
@@ -417,75 +556,68 @@
     <nav>
       <a href="#" class="logo">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-          <!-- Ascending steps -->
+          <!-- Ascending steps motif -->
           <rect x="4" y="20" width="6" height="8" fill="#9CAF88"/>
           <rect x="12" y="14" width="6" height="14" fill="#9CAF88"/>
           <rect x="20" y="8" width="6" height="20" fill="#B8860B" opacity="0.8"/>
         </svg>
         The Ascent
       </a>
-      <span class="tagline">One Step Closer to AI Adoption</span>
+      <span class="tagline">One Step Closer to AI-Powered Natural Products</span>
     </nav>
   </header>
 
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <h1>One Step Closer to AI Adoption</h1>
-      <p class="subtitle">Practical AI guidance for natural products leaders</p>
+      <h1>Leading the Natural Products Industry Into the AI Era</h1>
+      <p class="subtitle">OSC: Where Natural Products CEOs Advance Together</p>
       <p class="description">
-        AI isn't a distant future—it's happening now. The Ascent helps OSC members navigate AI adoption with confidence, one step at a time. Real strategies. Real results. For real CEOs.
+        The One Step Closer (OSC) community is redefining natural products leadership through AI-powered transformation. We're not just teaching adoption—we're driving it. Real strategies. Real results. Real leaders.
       </p>
-      <button class="cta-primary" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})">
-        Get Started
-      </button>
+      <div>
+        <button class="cta-primary" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})">
+          Join OSC
+        </button>
+        <a class="cta-secondary" href="#community">Learn More</a>
+      </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Vision Section -->
     <section class="section">
       <div>
-        <h2>About The Ascent</h2>
-        <div class="about-grid">
-          <div class="about-content">
-            <h3>Steady Progress, Proven Path</h3>
+        <h2>Why OSC is Leading AI Transformation</h2>
+        <div class="vision-grid">
+          <div class="vision-content">
+            <h3>AI Amplifies Our Mission</h3>
             <p>
-              The One Step Closer (OSC) community brings together natural products CEOs who understand that sustainable growth requires thoughtful decisions. AI is one of those decisions.
+              OSC members understand that sustainable growth in natural products requires more than good intentions. It requires the right tools, the right knowledge, and the right community.
             </p>
             <p>
-              We believe AI adoption doesn't mean betting the company. It means building confidence through education, learning from peers, and taking concrete steps forward.
+              AI is one of those tools—and it's not just for tech companies. It's for the leaders building stronger companies, better systems, and a more resilient industry.
             </p>
             <p>
-              The Ascent is your guide—grounded in real-world operations, written for natural products leaders, and designed to demystify AI adoption.
+              We're leading this transformation so you can lead yours.
             </p>
+            <ul>
+              <li>Stronger supply chains through AI-powered optimization</li>
+              <li>Faster decisions backed by predictive intelligence</li>
+              <li>Competitive advantage in a rapidly evolving market</li>
+              <li>Peer-driven learning from industry leaders</li>
+            </ul>
           </div>
-          <div class="steps-visual">
-            <div class="step">
-              <div class="step-number">1</div>
-              <div class="step-content">
-                <h4>Assess</h4>
-                <p>Understand where AI fits in your operations</p>
-              </div>
+          <div class="impact-visual">
+            <div class="impact-card">
+              <h4>Industry Leadership</h4>
+              <p>OSC members are setting the standard for how natural products companies adopt and scale AI responsibly.</p>
             </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <div class="step-content">
-                <h4>Learn</h4>
-                <p>Gain skills and confidence from peer experiences</p>
-              </div>
+            <div class="impact-card">
+              <h4>Proven Results</h4>
+              <p>From supply chain optimization to decision-making speed, OSC members see measurable ROI from AI deployment.</p>
             </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <div class="step-content">
-                <h4>Implement</h4>
-                <p>Deploy AI solutions that drive measurable results</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-number">4</div>
-              <div class="step-content">
-                <h4>Scale</h4>
-                <p>Grow confidently with AI as a core operating tool</p>
-              </div>
+            <div class="impact-card">
+              <h4>Community Protection</h4>
+              <p>Navigate AI adoption challenges alongside peers who understand your industry, values, and constraints.</p>
             </div>
           </div>
         </div>
@@ -495,44 +627,72 @@
     <!-- Case Study Section -->
     <section class="section">
       <div>
-        <h2>Proof: Real Results</h2>
+        <h2>Proof: Nutri8's AI-Powered Operations</h2>
         <div class="case-study">
-          <h3>Nutri8: AI-Driven Operations in Action</h3>
+          <h3>An OSC Member Leading the Way</h3>
           <p>
-            Nutri8, a leader in the natural products space, partnered with AI-driven tools to streamline their operations. The result: measurable efficiency gains, faster decision-making, and renewed competitive advantage.
+            Nutri8, a natural products innovator and proud OSC member, partnered with AI-driven tools to transform their operations from reactive to strategic. The result: measurable efficiency, competitive advantage, and a blueprint for the industry.
           </p>
           <div class="highlight">
-            <strong>The Challenge:</strong> Growing operational complexity while maintaining the quality and values that define the brand.
+            <strong>The Challenge:</strong> Growing operational complexity while maintaining the authenticity and values that define natural products leadership.
           </div>
           <div class="highlight">
-            <strong>The Solution:</strong> Implemented AI-powered process optimization, predictive analytics, and decision support systems tailored to natural products supply chains.
+            <strong>The Solution:</strong> Implemented AI-powered process optimization, predictive analytics, and decision support systems—all tailored to the unique demands of natural products supply chains and regenerative operations.
           </div>
           <div class="case-study-results">
             <div class="result-card">
               <div class="number">40%</div>
-              <div class="label">Process Efficiency</div>
+              <div class="label">Process Efficiency Gain</div>
             </div>
             <div class="result-card">
               <div class="number">3x</div>
-              <div class="label">Faster Insights</div>
+              <div class="label">Faster Strategic Insights</div>
             </div>
             <div class="result-card">
               <div class="number">92%</div>
-              <div class="label">Team Adoption</div>
+              <div class="label">Team Adoption Rate</div>
             </div>
           </div>
           <p style="margin-top: 2rem; font-size: 0.95rem; color: #888;">
-            This is one path forward. Yours may be different—but the principles are the same: thoughtful, measured, and grounded in your business.
+            Nutri8's journey is one of many. OSC members across the industry are proving that AI adoption—when done thoughtfully—accelerates growth without compromising values. Your path may look different, but the principle is the same: measured, grounded, and community-supported.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="section" id="community">
+      <div>
+        <h2>The OSC Community: Your Advantage</h2>
+        <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 2rem; line-height: 1.8;">
+          OSC is more than an organization. It's a sanctuary where natural products CEOs learn, implement, and lead together. Here's what members get:
+        </p>
+        <div class="community-grid">
+          <div class="community-card">
+            <h4>Peer-Driven Learning</h4>
+            <p>Learn directly from OSC members who've navigated AI adoption in natural products. Real strategies. Real challenges. Real solutions.</p>
+          </div>
+          <div class="community-card">
+            <h4>Implementation Support</h4>
+            <p>Move beyond theory. Access resources, frameworks, and expert guidance to deploy AI solutions that drive measurable results.</p>
+          </div>
+          <div class="community-card">
+            <h4>Industry Leadership</h4>
+            <p>Be part of the community setting the standard for how natural products companies compete and lead in the AI era.</p>
+          </div>
+          <div class="community-card">
+            <h4>Values-Aligned Growth</h4>
+            <p>Adopt AI responsibly, authentically, and in alignment with the sustainability and quality values that define natural products.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section contact-section">
-      <h2>Let's Talk</h2>
+      <h2>Ready to Advance?</h2>
       <p>
-        Ready to take the next step? Share your thoughts, questions, or interest in joining the conversation.
+        Join OSC and lead your company—and your industry—into the AI-powered future.
       </p>
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <input 
@@ -556,22 +716,22 @@
           aria-label="Company or Role"
         >
         <textarea 
-          placeholder="Tell us about your AI journey..." 
+          placeholder="Tell us about your company and AI goals..." 
           name="message"
           aria-label="Message"
         ></textarea>
-        <button type="submit" class="cta-primary">Send Message</button>
+        <button type="submit" class="cta-primary">Join the Conversation</button>
       </form>
       <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
-        We'll get back to you soon. Thank you for your interest in The Ascent.
+        We'll be in touch soon. Thank you for considering OSC.
       </p>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 The Ascent. Guidance for natural products leaders navigating AI adoption.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">Part of the One Step Closer (OSC) community</p>
+    <p>&copy; 2026 The Ascent. OSC's vision for AI-powered leadership in natural products.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">One Step Closer (OSC) Community</p>
   </footer>
 
   <script>
@@ -588,7 +748,7 @@
       
       // In production, this would send to a backend/service
       console.log('Form submitted:', data);
-      alert('Thank you for reaching out! We\'ll be in touch soon.');
+      alert('Thank you for your interest in OSC! We\'ll be in touch soon.');
       e.target.reset();
     }
   </script>
