@@ -2,9 +2,9 @@
 
 ## Deploy Log
 
-**Deployed:** 2026-04-21  
-**Site:** The Ascent  
-**Tagline:** One Step Closer to AI Adoption
+**Latest Deploy:** 2026-04-21 (Rebuild v2 — OSC-Centric Positioning)  
+**Site:** The Ascent — One Step Closer to AI-Powered Natural Products  
+**Tagline:** One Step Closer to AI-Powered Natural Products
 
 ### Live URLs
 
@@ -20,12 +20,20 @@
   - Copper: `#B8860B`
   - Deep charcoal: `#2C3E37`
 
-### Content Sections
+### Content Sections (v2 Rebuild)
 
-1. **Hero** — "One Step Closer to AI Adoption" with primary CTA
-2. **About** — OSC intro + 4-step methodology (Assess → Learn → Implement → Scale)
-3. **Proof** — Nutri8 case study (AI-driven operations, real metrics)
-4. **Contact** — Simple form for inquiries
+1. **Hero** — "Leading the Natural Products Industry Into the AI Era" — OSC positioning
+2. **Vision** — How AI amplifies OSC's mission (impact cards: leadership, results, protection)
+3. **Proof** — Nutri8 case study as OSC member (40% efficiency, 3x insights, 92% adoption)
+4. **Community** — OSC membership value (peer learning, implementation, leadership, values-aligned growth)
+5. **Contact** — "Join OSC" conversion + form
+
+**Key Changes:**
+- Shifted from AI adoption guidance to OSC leadership positioning
+- Added vision section emphasizing AI as industry transformation tool
+- Reframed Nutri8 as OSC member proof point
+- New community section highlighting peer-driven learning
+- Updated CTAs: "Join OSC" primary, "Learn More" secondary
 
 ### Technical
 
