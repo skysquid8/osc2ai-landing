@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Ascent - OSC's AI-Powered Natural Products Leadership</title>
+  <title>OSC + AI — Leading Natural Products Into the AI Era</title>
   <style>
     * {
       margin: 0;
@@ -12,30 +12,38 @@
     }
 
     :root {
-      --sage: #9CAF88;
-      --cream: #F5F1E8;
-      --copper: #B8860B;
-      --charcoal: #2C3E37;
-      --light-gray: #F9F7F3;
-      --border-gray: #E8E4DD;
+      --brown: #5D4E37;
+      --sand: #D4A574;
+      --green: #3F5F3F;
+      --gold: #FFB347;
+      --cream: #FAF8F3;
+      --white: #FFFFFF;
+      --text-dark: #2C2C2C;
+      --text-light: #666666;
+      --border: #E8E4DD;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      color: var(--charcoal);
+      color: var(--text-dark);
       background: var(--cream);
       overflow-x: hidden;
     }
 
-    /* Header & Nav */
+    /* ============ Header & Nav ============ */
     header {
-      background: white;
-      border-bottom: 1px solid var(--border-gray);
-      padding: 1.5rem 2rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     nav {
@@ -44,78 +52,147 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem;
     }
 
-    .logo {
+    .logo-group {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--charcoal);
+      gap: 1rem;
       text-decoration: none;
     }
 
-    .logo svg {
-      width: 32px;
-      height: 32px;
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      display: block;
     }
 
-    nav .tagline {
-      font-size: 0.85rem;
-      color: var(--sage);
-      font-weight: 500;
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .logo-text .name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text .tagline {
+      font-size: 0.7rem;
+      color: var(--sand);
+      font-weight: 600;
       letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    /* Main container */
+    nav .nav-right {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--brown);
+    }
+
+    /* ============ Main Container ============ */
     main {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* Hero section */
+    /* ============ Hero Section ============ */
     .hero {
-      min-height: 70vh;
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--cream) 0%, rgba(156, 175, 136, 0.08) 100%);
+      background: linear-gradient(135deg, var(--cream) 0%, rgba(95, 95, 63, 0.05) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 179, 71, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(63, 95, 63, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -80px;
+      left: -80px;
+      z-index: -1;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
       margin-bottom: 1.5rem;
-      color: var(--charcoal);
-      font-weight: 700;
-      line-height: 1.2;
+      color: var(--brown);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 .accent {
+      color: var(--gold);
     }
 
     .hero .subtitle {
-      font-size: 1.25rem;
-      color: var(--sage);
+      font-size: 1.4rem;
+      color: var(--green);
       margin-bottom: 2rem;
-      max-width: 600px;
-      font-weight: 500;
+      max-width: 700px;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .hero .description {
       font-size: 1.1rem;
-      color: #555;
-      max-width: 700px;
+      color: var(--text-light);
+      max-width: 750px;
       margin-bottom: 3rem;
       line-height: 1.8;
     }
 
-    .cta-primary {
+    .hero-ctas {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============ Buttons ============ */
+    .btn {
       display: inline-block;
-      background: var(--sage);
-      color: white;
-      padding: 1rem 2.5rem;
+      padding: 1rem 2.25rem;
       font-size: 1rem;
       font-weight: 600;
       border: none;
@@ -123,45 +200,42 @@
       cursor: pointer;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(156, 175, 136, 0.2);
+      text-align: center;
     }
 
-    .cta-primary:hover {
-      background: #8a9a74;
+    .btn-primary {
+      background: var(--brown);
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(93, 78, 55, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #4A3D2A;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(156, 175, 136, 0.3);
+      box-shadow: 0 6px 16px rgba(93, 78, 55, 0.3);
     }
 
-    .cta-secondary {
-      display: inline-block;
+    .btn-secondary {
       background: transparent;
-      color: var(--sage);
-      padding: 0.75rem 2rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border: 2px solid var(--sage);
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      margin-left: 1rem;
+      color: var(--brown);
+      border: 2px solid var(--brown);
     }
 
-    .cta-secondary:hover {
-      background: var(--sage);
-      color: white;
+    .btn-secondary:hover {
+      background: var(--brown);
+      color: var(--white);
     }
 
-    /* About section */
+    /* ============ Sections ============ */
     .section {
       padding: 5rem 2rem;
       margin: 0 -2rem;
-      background: white;
-      border-top: 1px solid var(--border-gray);
+      background: var(--white);
+      border-top: 1px solid var(--border);
     }
 
     .section:nth-child(even) {
-      background: var(--light-gray);
+      background: var(--cream);
     }
 
     .section > * {
@@ -170,31 +244,32 @@
     }
 
     .section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      margin-bottom: 2rem;
-      color: var(--charcoal);
-      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 3rem;
+      color: var(--brown);
+      font-weight: 800;
+      line-height: 1.2;
     }
 
-    /* Vision section */
+    /* ============ Vision Section ============ */
     .vision-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 3.5rem;
       align-items: start;
     }
 
     .vision-content h3 {
-      color: var(--sage);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
+      color: var(--green);
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
     }
 
     .vision-content p {
       font-size: 1rem;
       line-height: 1.8;
-      color: #666;
+      color: var(--text-light);
       margin-bottom: 1.5rem;
     }
 
@@ -206,218 +281,189 @@
     .vision-content li {
       padding-left: 2rem;
       position: relative;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      color: #666;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
       line-height: 1.6;
     }
 
     .vision-content li:before {
-      content: "→";
+      content: "✓";
       position: absolute;
       left: 0;
-      color: var(--sage);
+      color: var(--gold);
       font-weight: bold;
+      font-size: 1.2rem;
     }
 
     .impact-visual {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .impact-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      border-left: 4px solid var(--copper);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      background: var(--cream);
+      padding: 1.75rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--sand);
+      transition: all 0.3s ease;
+    }
+
+    .impact-card:hover {
+      border-left-color: var(--gold);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     .impact-card h4 {
-      color: var(--copper);
+      color: var(--brown);
       font-size: 1.2rem;
       margin-bottom: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .impact-card p {
       font-size: 0.95rem;
-      color: #666;
+      color: var(--text-light);
       line-height: 1.6;
     }
 
-    /* About section */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-content h3 {
-      color: var(--sage);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .about-content p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #666;
-      margin-bottom: 1.5rem;
-    }
-
-    .steps-visual {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .step {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-
-    .step-number {
-      width: 50px;
-      height: 50px;
-      background: var(--sage);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-
-    .step-content h4 {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--charcoal);
-    }
-
-    .step-content p {
-      font-size: 0.95rem;
-      color: #777;
-      line-height: 1.6;
-    }
-
-    /* Proof/Case Study section */
+    /* ============ Case Study Section ============ */
     .case-study {
-      background: white;
-      border-radius: 12px;
+      background: var(--white);
+      border-radius: 10px;
       padding: 2.5rem;
       margin-top: 2rem;
-      border-left: 4px solid var(--copper);
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .case-study h3 {
-      color: var(--copper);
-      font-size: 1.3rem;
+      color: var(--brown);
+      font-size: 1.4rem;
       margin-bottom: 1rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .case-study .highlight {
-      background: linear-gradient(120deg, rgba(184, 134, 11, 0.1), rgba(156, 175, 136, 0.1));
+    .case-study p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(212, 165, 116, 0.15), rgba(63, 95, 63, 0.1));
       padding: 1.5rem;
-      border-radius: 8px;
+      border-left: 4px solid var(--sand);
+      border-radius: 6px;
       margin: 1.5rem 0;
     }
 
-    .case-study .highlight strong {
-      color: var(--copper);
+    .highlight strong {
+      color: var(--brown);
       font-weight: 700;
     }
 
     .case-study-results {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .result-card {
       text-align: center;
-      padding: 1.5rem;
-      background: var(--light-gray);
+      padding: 1.75rem;
+      background: linear-gradient(135deg, rgba(255, 179, 71, 0.08), rgba(212, 165, 116, 0.08));
       border-radius: 8px;
+      border: 1px solid rgba(212, 165, 116, 0.3);
     }
 
     .result-card .number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--copper);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gold);
       margin-bottom: 0.5rem;
     }
 
     .result-card .label {
       font-size: 0.9rem;
-      color: #666;
-      font-weight: 500;
+      color: var(--text-light);
+      font-weight: 600;
     }
 
-    /* Community section */
+    /* ============ Community Section ============ */
+    .community-intro {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+
     .community-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
 
     .community-card {
-      background: white;
+      background: var(--white);
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 10px;
       text-align: center;
-      border-top: 3px solid var(--sage);
+      border-top: 4px solid var(--green);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
     }
 
     .community-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-top-color: var(--gold);
     }
 
     .community-card h4 {
-      color: var(--charcoal);
+      color: var(--brown);
       font-size: 1.2rem;
       margin-bottom: 1rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .community-card p {
       font-size: 0.95rem;
-      color: #666;
+      color: var(--text-light);
       line-height: 1.6;
     }
 
-    /* Contact section */
-    .contact-section {
+    /* ============ CTA Section ============ */
+    .cta-section {
       text-align: center;
       padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--brown) 0%, #4A3D2A 100%);
+      color: var(--white);
+      margin: 0 -2rem;
     }
 
-    .contact-section h2 {
-      margin-bottom: 2rem;
+    .cta-section h2 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
     }
 
-    .contact-section p {
+    .cta-section p {
       font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.5rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.8;
     }
 
-    .contact-form {
+    .cta-form {
       max-width: 500px;
       margin: 0 auto;
       display: flex;
@@ -425,73 +471,111 @@
       gap: 1rem;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border-gray);
+    .cta-form input,
+    .cta-form textarea {
+      padding: 0.9rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 6px;
       font-size: 0.95rem;
       font-family: inherit;
-      transition: border-color 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: all 0.3s ease;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
+    .cta-form input::placeholder,
+    .cta-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cta-form input:focus,
+    .cta-form textarea:focus {
       outline: none;
-      border-color: var(--sage);
-      box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.1);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.2);
     }
 
-    .contact-form textarea {
+    .cta-form textarea {
       resize: vertical;
       min-height: 120px;
     }
 
-    .contact-form button {
-      margin-top: 1rem;
+    .cta-form .btn-primary {
+      background: var(--gold);
+      color: var(--brown);
+      margin-top: 0.5rem;
+      font-weight: 700;
     }
 
-    /* Footer */
+    .cta-form .btn-primary:hover {
+      background: #FFD699;
+      transform: translateY(-2px);
+    }
+
+    /* ============ Footer ============ */
     footer {
-      background: var(--charcoal);
-      color: white;
-      padding: 2rem;
+      background: #3A3A3A;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem 2rem;
       text-align: center;
-      border-top: 1px solid var(--border-gray);
+      border-top: 1px solid var(--border);
     }
 
     footer p {
       font-size: 0.9rem;
-      opacity: 0.8;
     }
 
-    /* Responsive */
+    footer p:first-child {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    footer p:last-child {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* ============ Responsive ============ */
     @media (max-width: 768px) {
       header {
         padding: 1rem 1.5rem;
       }
 
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .logo-text .tagline {
+        display: none;
+      }
+
+      .nav-right {
+        display: none;
+      }
+
       .hero {
-        min-height: 50vh;
+        min-height: 60vh;
         padding: 3rem 1.5rem;
       }
 
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+
       .vision-grid,
-      .about-grid {
+      .case-study-results {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
 
-      .case-study-results {
-        grid-template-columns: 1fr;
-      }
-
       .community-grid {
         grid-template-columns: 1fr;
-      }
-
-      .contact-form {
-        padding: 0 1rem;
       }
 
       main {
@@ -503,38 +587,45 @@
         margin: 0 -1.5rem;
       }
 
-      .cta-secondary {
-        display: block;
-        margin-left: 0;
-        margin-top: 0.5rem;
+      .cta-section {
+        margin: 0 -1.5rem;
+        padding: 3rem 1.5rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
 
     @media (max-width: 480px) {
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
 
       .hero .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
 
       .section h2 {
         font-size: 1.5rem;
       }
 
-      nav {
-        flex-direction: column;
-        gap: 0.5rem;
+      .vision-content h3,
+      .community-card h4 {
+        font-size: 1.1rem;
       }
 
-      .logo {
-        margin-bottom: 0.5rem;
+      .result-card .number {
+        font-size: 2rem;
       }
     }
 
-    /* SVG animations */
-    @keyframes slide-in {
+    /* ============ Animations ============ */
+    @keyframes fade-in {
       from {
         opacity: 0;
         transform: translateY(20px);
@@ -546,79 +637,88 @@
     }
 
     .hero {
-      animation: slide-in 0.8s ease;
+      animation: fade-in 0.8s ease;
     }
+
+    .community-card {
+      animation: fade-in 0.6s ease backwards;
+    }
+
+    .community-card:nth-child(1) { animation-delay: 0.1s; }
+    .community-card:nth-child(2) { animation-delay: 0.2s; }
+    .community-card:nth-child(3) { animation-delay: 0.3s; }
+    .community-card:nth-child(4) { animation-delay: 0.4s; }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <nav>
-      <a href="#" class="logo">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-          <!-- Ascending steps motif -->
-          <rect x="4" y="20" width="6" height="8" fill="#9CAF88"/>
-          <rect x="12" y="14" width="6" height="14" fill="#9CAF88"/>
-          <rect x="20" y="8" width="6" height="20" fill="#B8860B" opacity="0.8"/>
-        </svg>
-        The Ascent
+      <a href="#" class="logo-group">
+        <img src="logo.png" alt="OSC Logo" class="logo-img">
+        <div class="logo-text">
+          <div class="name">OSC + AI</div>
+          <div class="tagline">Natural Products Leadership</div>
+        </div>
       </a>
-      <span class="tagline">One Step Closer to AI-Powered Natural Products</span>
+      <div class="nav-right">
+        <a href="#vision">Vision</a>
+        <a href="#community">Community</a>
+        <a href="#cta" class="btn btn-primary" style="margin: 0; padding: 0.75rem 1.5rem; font-size: 0.9rem;">Join Now</a>
+      </div>
     </nav>
   </header>
 
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Leading the Natural Products Industry Into the AI Era</h1>
-      <p class="subtitle">OSC: Where Natural Products CEOs Advance Together</p>
+      <h1>OSC + <span class="accent">AI</span></h1>
+      <p class="subtitle">Leading Natural Products Into the AI Era</p>
       <p class="description">
-        The One Step Closer (OSC) community is redefining natural products leadership through AI-powered transformation. We're not just teaching adoption—we're driving it. Real strategies. Real results. Real leaders.
+        The One Step Closer community redefines natural products leadership through AI transformation. 
+        We help industry leaders build stronger companies, better systems, and a more resilient industry—together.
       </p>
-      <div>
-        <button class="cta-primary" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})">
+      <div class="hero-ctas">
+        <button class="btn btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior: 'smooth'})">
           Join OSC
         </button>
-        <a class="cta-secondary" href="#community">Learn More</a>
+        <a href="#community" class="btn btn-secondary">Learn More</a>
       </div>
     </section>
 
     <!-- Vision Section -->
-    <section class="section">
-      <div>
-        <h2>Why OSC is Leading AI Transformation</h2>
-        <div class="vision-grid">
-          <div class="vision-content">
-            <h3>AI Amplifies Our Mission</h3>
-            <p>
-              OSC members understand that sustainable growth in natural products requires more than good intentions. It requires the right tools, the right knowledge, and the right community.
-            </p>
-            <p>
-              AI is one of those tools—and it's not just for tech companies. It's for the leaders building stronger companies, better systems, and a more resilient industry.
-            </p>
-            <p>
-              We're leading this transformation so you can lead yours.
-            </p>
-            <ul>
-              <li>Stronger supply chains through AI-powered optimization</li>
-              <li>Faster decisions backed by predictive intelligence</li>
-              <li>Competitive advantage in a rapidly evolving market</li>
-              <li>Peer-driven learning from industry leaders</li>
-            </ul>
+    <section class="section" id="vision">
+      <h2>How AI Amplifies Our Mission</h2>
+      <div class="vision-grid">
+        <div class="vision-content">
+          <h3>Leading Transformation Together</h3>
+          <p>
+            The natural products industry is at an inflection point. AI adoption isn't optional—it's strategic.
+          </p>
+          <p>
+            OSC members understand that sustainable growth requires the right tools, knowledge, and community. 
+            AI is one of those tools. It's not for tech companies alone—it's for leaders like you building 
+            stronger companies, better systems, and competitive advantage.
+          </p>
+          <ul>
+            <li>Optimize supply chains with AI-powered insights</li>
+            <li>Make faster, data-driven strategic decisions</li>
+            <li>Stay ahead in a rapidly evolving market</li>
+            <li>Learn from peers who share your values</li>
+          </ul>
+        </div>
+        <div class="impact-visual">
+          <div class="impact-card">
+            <h4>Industry Leadership</h4>
+            <p>OSC members set the standard for responsible AI adoption in natural products.</p>
           </div>
-          <div class="impact-visual">
-            <div class="impact-card">
-              <h4>Industry Leadership</h4>
-              <p>OSC members are setting the standard for how natural products companies adopt and scale AI responsibly.</p>
-            </div>
-            <div class="impact-card">
-              <h4>Proven Results</h4>
-              <p>From supply chain optimization to decision-making speed, OSC members see measurable ROI from AI deployment.</p>
-            </div>
-            <div class="impact-card">
-              <h4>Community Protection</h4>
-              <p>Navigate AI adoption challenges alongside peers who understand your industry, values, and constraints.</p>
-            </div>
+          <div class="impact-card">
+            <h4>Proven Results</h4>
+            <p>From supply chain optimization to decision speed, members see measurable ROI.</p>
+          </div>
+          <div class="impact-card">
+            <h4>Values-Aligned Growth</h4>
+            <p>Adopt AI authentically, in alignment with the sustainability and quality you stand for.</p>
           </div>
         </div>
       </div>
@@ -626,75 +726,74 @@
 
     <!-- Case Study Section -->
     <section class="section">
-      <div>
-        <h2>Proof: Nutri8's AI-Powered Operations</h2>
-        <div class="case-study">
-          <h3>An OSC Member Leading the Way</h3>
-          <p>
-            Nutri8, a natural products innovator and proud OSC member, partnered with AI-driven tools to transform their operations from reactive to strategic. The result: measurable efficiency, competitive advantage, and a blueprint for the industry.
-          </p>
-          <div class="highlight">
-            <strong>The Challenge:</strong> Growing operational complexity while maintaining the authenticity and values that define natural products leadership.
+      <h2>Proof: Nutri8's AI-Powered Transformation</h2>
+      <div class="case-study">
+        <h3>An OSC Member Leading the Way</h3>
+        <p>
+          Nutri8, an innovator in natural products and proud OSC member, transformed operations using 
+          AI-driven tools. The result: measurable efficiency, competitive advantage, and a blueprint 
+          for the industry.
+        </p>
+        <div class="highlight">
+          <strong>The Challenge:</strong> Growing operational complexity while maintaining the authenticity 
+          and values that define natural products leadership.
+        </div>
+        <div class="highlight">
+          <strong>The Solution:</strong> AI-powered process optimization, predictive analytics, and 
+          decision support systems tailored to regenerative operations and natural products supply chains.
+        </div>
+        <div class="case-study-results">
+          <div class="result-card">
+            <div class="number">40%</div>
+            <div class="label">Process Efficiency Gain</div>
           </div>
-          <div class="highlight">
-            <strong>The Solution:</strong> Implemented AI-powered process optimization, predictive analytics, and decision support systems—all tailored to the unique demands of natural products supply chains and regenerative operations.
+          <div class="result-card">
+            <div class="number">3x</div>
+            <div class="label">Faster Strategic Insights</div>
           </div>
-          <div class="case-study-results">
-            <div class="result-card">
-              <div class="number">40%</div>
-              <div class="label">Process Efficiency Gain</div>
-            </div>
-            <div class="result-card">
-              <div class="number">3x</div>
-              <div class="label">Faster Strategic Insights</div>
-            </div>
-            <div class="result-card">
-              <div class="number">92%</div>
-              <div class="label">Team Adoption Rate</div>
-            </div>
+          <div class="result-card">
+            <div class="number">92%</div>
+            <div class="label">Team Adoption Rate</div>
           </div>
-          <p style="margin-top: 2rem; font-size: 0.95rem; color: #888;">
-            Nutri8's journey is one of many. OSC members across the industry are proving that AI adoption—when done thoughtfully—accelerates growth without compromising values. Your path may look different, but the principle is the same: measured, grounded, and community-supported.
-          </p>
         </div>
       </div>
     </section>
 
     <!-- Community Section -->
     <section class="section" id="community">
-      <div>
-        <h2>The OSC Community: Your Advantage</h2>
-        <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 2rem; line-height: 1.8;">
-          OSC is more than an organization. It's a sanctuary where natural products CEOs learn, implement, and lead together. Here's what members get:
-        </p>
-        <div class="community-grid">
-          <div class="community-card">
-            <h4>Peer-Driven Learning</h4>
-            <p>Learn directly from OSC members who've navigated AI adoption in natural products. Real strategies. Real challenges. Real solutions.</p>
-          </div>
-          <div class="community-card">
-            <h4>Implementation Support</h4>
-            <p>Move beyond theory. Access resources, frameworks, and expert guidance to deploy AI solutions that drive measurable results.</p>
-          </div>
-          <div class="community-card">
-            <h4>Industry Leadership</h4>
-            <p>Be part of the community setting the standard for how natural products companies compete and lead in the AI era.</p>
-          </div>
-          <div class="community-card">
-            <h4>Values-Aligned Growth</h4>
-            <p>Adopt AI responsibly, authentically, and in alignment with the sustainability and quality values that define natural products.</p>
-          </div>
+      <h2>The OSC Community: Your Advantage</h2>
+      <p class="community-intro">
+        OSC is where natural products CEOs learn, implement, and lead together. 
+        Here's what membership unlocks:
+      </p>
+      <div class="community-grid">
+        <div class="community-card">
+          <h4>Peer-Driven Learning</h4>
+          <p>Learn directly from leaders who've navigated AI adoption. Real strategies. Real challenges. Real solutions.</p>
+        </div>
+        <div class="community-card">
+          <h4>Implementation Support</h4>
+          <p>Move beyond theory. Access frameworks and expert guidance to deploy AI solutions that drive results.</p>
+        </div>
+        <div class="community-card">
+          <h4>Industry Leadership</h4>
+          <p>Be part of the community setting the standard for how natural products companies compete in the AI era.</p>
+        </div>
+        <div class="community-card">
+          <h4>Trusted Network</h4>
+          <p>Connect with peers who understand your industry, values, and the unique constraints of natural products.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section contact-section">
-      <h2>Ready to Advance?</h2>
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+      <h2>Ready to Lead?</h2>
       <p>
-        Join OSC and lead your company—and your industry—into the AI-powered future.
+        Join OSC and advance your company into the AI-powered future. 
+        Let's transform the natural products industry together.
       </p>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
+      <form class="cta-form" onsubmit="handleSubmit(event)">
         <input 
           type="text" 
           placeholder="Your Name" 
@@ -720,9 +819,9 @@
           name="message"
           aria-label="Message"
         ></textarea>
-        <button type="submit" class="cta-primary">Join the Conversation</button>
+        <button type="submit" class="btn btn-primary">Join the Conversation</button>
       </form>
-      <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
         We'll be in touch soon. Thank you for considering OSC.
       </p>
     </section>
@@ -730,8 +829,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 The Ascent. OSC's vision for AI-powered leadership in natural products.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">One Step Closer (OSC) Community</p>
+    <p>&copy; 2026 One Step Closer (OSC). Leading natural products into the AI era.</p>
+    <p>Community of forward-thinking CEOs in natural products and regenerative business.</p>
   </footer>
 
   <script>
@@ -740,15 +839,13 @@
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
       
-      // Simple validation
       if (!data.name || !data.email) {
         alert('Please fill in all required fields.');
         return;
       }
       
-      // In production, this would send to a backend/service
       console.log('Form submitted:', data);
-      alert('Thank you for your interest in OSC! We\'ll be in touch soon.');
+      alert('Thank you! We'll be in touch soon about joining OSC.');
       e.target.reset();
     }
   </script>
